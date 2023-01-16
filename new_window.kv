@@ -1,0 +1,2869 @@
+WindowManager:
+	PrefirstWindow:
+	FirstWindow:
+	SecondWindow:
+	ThirdWindow:
+	FourthWindow:
+	FifthWindow:
+	SixthWindow:
+	SeventhWindow:
+	EighthWindow:
+	NinethWindow:
+	TenthWindow:
+	EleventhWindow:
+	TwelvethWindow:
+
+<BackgroundColor@Widget>
+    background_color: 1, 1, 1, 1
+    canvas.before:
+        Color:
+            rgba: root.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+<BackgroundLabel@Label+BackgroundColor>
+    background_color: 0, 0, 0, 0
+
+<PrefirstWindow>:
+	name: "prefirst"
+	ScrollView:
+	    do_scroll_x: False
+		do_scroll_y: True
+		GridLayout:
+			cols:1
+			size:(root.width, root.height)
+			size_hint_y: None
+			height: self.minimum_height
+			padding: 10
+			BackgroundLabel:
+				text: "Тест Рея на слухоречевое заучивание\nПозволяет оценить запоминание и удержание слов"
+				size_hint_y: None
+				size: self.texture_size
+				text_size: root.width*9/10, None
+				background_color: 85/256, 1/256, 37/256, 1
+			BackgroundLabel:
+				text: "В процессе выполнения теста участнику нужно будет запоминать, называть или узнавать слова. Сначала, в пяти попытках, участник должен назвать 15 одних и тех же, раннее услышанных, слов (этап заучивания). Затем участнику будет предложено запомнить и назвать список из 15 других слов (этап интерференции), после чего - вспомнить и назвать слова из первого списка (воспроизведение после интерференции). \nЗа этим последует перерыв 20 минут, во время котрого деятельность участника не контролируется. После перерыва участник должен опять вспомнить и назвать слова из первого списка (отсроченное воспроизведение), а затем - узнать эти слова из зрительно предъявленного списка 50 слов (зрительно опознание). \nНа каждом этапе теста исследователь должен читать участнику инструкцию, воспроизводить аудио со списками слов и нажатием отмечать правильно названные участником слова; они будут отображаться на экране. На последнем этапе зрительного опознания - исследователь дает планшет участнику, который нажатием отмечает узнанные им слова. \nТест представлен в трех равнозначных версиях, для повторных тестирований одного и того же участника."
+				text_size: root.width*9/10, None
+				size: self.texture_size
+				size_hint_y: None
+				background_color: 252/256, 252/256, 252/256, 1
+				color: 60/256,8/256,31/256,1
+			BackgroundLabel:
+				size_hint_y: None
+				height:40
+				background_color: 252/256, 252/256, 252/256, 1
+			Button:
+				background_normal:''
+				background_color: 222/256, 164/256, 189/256, 1
+				size_hint_y: None
+				color: 45/256, 25/256, 30/256,1
+				height:40
+				text: "Продолжить"
+				on_release:
+					app.root.current = "first"
+					root.manager.transition.direction = "left"
+					
+<FirstWindow>:
+	name: "first"
+	
+	code:code
+	age:age
+	edu:edu
+	email:email
+	
+	ScrollView:
+	    do_scroll_x: False
+		do_scroll_y: True
+		GridLayout:
+			cols:2
+			rows:9
+			size_hint_y: None
+			padding:15
+			BackgroundLabel:
+				background_color: 85/256, 1/256, 37/256, 1
+				text: "Введите данные"
+				size_hint_y: None
+				height:40
+			BackgroundLabel:
+				background_color: 85/256, 1/256, 37/256, 1
+				size_hint_y: None
+				height:40
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				color: 60/256,8/256,31/256,1
+				text: "Код участника"
+				size_hint_y: None
+				height:40
+			TextInput:
+				size_hint_y: None
+				height:40
+				id: code
+				multiline:False
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				color: 60/256,8/256,31/256,1
+				text: "Возраст"
+				size_hint_y: None
+				height:40
+			TextInput:
+				size_hint_y: None
+				height:40
+				id: age
+				multiline:False
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				color: 60/256,8/256,31/256,1
+				text: "Количество полных лет обучения"
+				size_hint_y: None
+				height:40
+			TextInput:
+				size_hint_y: None
+				height:40
+				id:edu
+				multiline:False
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				color: 60/256,8/256,31/256,1
+				size_hint_y: None
+				height:40
+				text: "Электронная почта для результатов"
+			TextInput:
+				size_hint_y: None
+				height:40
+				id:email
+				multiline:False
+			BackgroundLabel:
+				background_color: 65/256, 1/256, 37/256, 1
+				text: 'Выберите версию:'
+				size_hint_y: None
+				height:40
+			Button:
+				background_normal:''
+				background_color: 96/256, 1/256, 37/256, 1
+				size_hint_y: None
+				height:40
+				text: "Первая версия"
+				on_release:
+					root.prrr()
+					app.root.current = "second"
+					root.manager.transition.direction = "left"
+			BackgroundLabel:
+				background_color: 85/256, 1/256, 37/256, 1
+				size_hint_y: None
+				height:40
+			Button:
+				background_normal:''
+				background_color: 105/256, 1/256, 37/256, 1
+				size_hint_y: None
+				height:40
+				text: "Вторая версия"
+				on_release:
+					root.prrr()
+					app.root.current = "second"
+					root.manager.transition.direction = "left"
+			BackgroundLabel:
+				background_color: 85/256, 1/256, 37/256, 1
+				size_hint_y: None
+				height:40
+			Button:
+				background_normal:''
+				background_color: 115/256, 1/256, 37/256, 1
+				size_hint_y: None
+				height:40
+				text: "Третья версия"
+				on_release:
+					root.prrr()
+					app.root.current = "second"
+					root.manager.transition.direction = "left"
+			BackgroundLabel:
+				size_hint_y: None
+				height:120
+			BackgroundLabel:
+				size_hint_y: None
+				height:120
+	
+<SecondWindow>:
+	name: "second"
+	
+	sumka:sumka
+	sapog:sapog
+	tsep:tsep
+	kulak:kulak
+	chay:chay
+	okno:okno
+	volosy:volosy
+	devochka:devochka
+	telefon:telefon
+	most:most
+	divan:divan
+	portret:portret
+	scheka:scheka
+	pismo:pismo
+	kletka:kletka
+	
+	
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+		
+		BackgroundLabel:
+			background_color: 85/256, 1/256, 37/256, 1
+			text: "ЗАУЧИВАНИЕ 1 из 5"
+			size_hint: [1, 1/12]
+			halign: "left"
+		BoxLayout:
+			orientation: "horizontal"
+			size_hint: [1, 3/12]
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				color: 60/256,8/256,31/256,1
+				text:"Инструкция:\nСейчас вы услышите список слов. Постарайтесь их запомнить.\nПотом вам нужно будет назвать все слова из этого списка, которые вспомните в любом порядке."
+				text_size: root.width*8/10, None
+				size: self.texture_size
+			AudioButton:
+				id:retret
+				background_normal:''
+				background_color: 249/256, 198/256, 207/256, 1
+				text: "Play"
+				filename: "Media/A1rus.ogg"
+				size_hint:[1/10, 1]
+		GridLayout:
+			rows:5
+			cols:3
+			padding:10
+			spacing:5
+			size_hint:[1,4/12]
+			
+			SuperButton:
+				number:0
+				text:'сумка'
+				id:sumka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'сапог'
+				id:sapog
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'цепь'
+				id:tsep
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				color: [30/256, 19/256, 23/256,1]
+				background_normal: ''			
+			SuperButton:
+				number:0
+				text:'кулак'
+				id:kulak
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'чай'
+				id:chay
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'окно'
+				id:okno
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'волосы'
+				id:volosy
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'девочка'
+				id:devochka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'телефон'
+				id:telefon
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'мост'
+				id:most
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'диван'
+				id:divan
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'портрет'
+				id:portret
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'щека'
+				id:scheka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'письмо'
+				id:pismo
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'клетка'
+				id:kletka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+		Widget:
+			size_hint:[1,3/12]			
+		Button:
+			background_normal: ''
+			background_color: 187/256, 70/256, 122/256, 1
+			color: 55/256, 1/256, 25/256, 1 
+			size_hint:[1,1/12]
+			text: "Продолжить"
+			on_release:
+				root.save_answers()
+				app.root.current = "third"
+				root.manager.transition.direction = "left"
+				
+<ThirdWindow>:
+	name: "third"
+
+	sumka:sumka
+	sapog:sapog
+	tsep:tsep
+	kulak:kulak
+	chay:chay
+	okno:okno
+	volosy:volosy
+	devochka:devochka
+	telefon:telefon
+	most:most
+	divan:divan
+	portret:portret
+	scheka:scheka
+	pismo:pismo
+	kletka:kletka
+	
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+		
+		BackgroundLabel:
+			text: "ЗАУЧИВАНИЕ 2 из 5"
+			size_hint: [1, 1/12]
+			halign: "left"
+			background_color: 85/256, 1/256, 37/256, 1
+			color: 1, 1, 1, 1 
+		BoxLayout:
+			orientation: "horizontal"
+			size_hint: [1, 3/12]
+			BackgroundLabel:
+				text:"Инструкция:\nСейчас вы услышите тот же список слов еще раз. И опять назовете те слова, которые вспомните.\nНазывать нужно все слова - даже те, которые вы называли в прошлый раз. Порядок значения не имеет."
+				text_size: root.width*8/10, None
+				size: self.texture_size
+				background_color: 1, 1, 1, 1
+				color: (55/256, 1/256, 25/256, 1)
+			AudioButton:
+				background_normal:''
+				background_color: 249/256, 198/256, 207/256, 1
+				id:retret
+				text: "Play"
+				filename: "Media/A1rus.ogg"
+				size_hint:[1/10, 1]
+		GridLayout:
+			rows:5
+			cols:3
+			padding:10
+			spacing:5
+			size_hint:[1,4/12]
+			
+			SuperButton:
+				number:0
+				text:'сумка'
+				id:sumka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'сапог'
+				id:sapog
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'цепь'
+				id:tsep
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''			
+			SuperButton:
+				number:0
+				text:'кулак'
+				id:kulak
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'чай'
+				id:chay
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'окно'
+				id:okno
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'волосы'
+				id:volosy
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'девочка'
+				id:devochka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'телефон'
+				id:telefon
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'мост'
+				id:most
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'диван'
+				id:divan
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'портрет'
+				id:portret
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'щека'
+				id:scheka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'письмо'
+				id:pismo
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'клетка'
+				id:kletka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+		Widget:
+			size_hint:[1,3/12]			
+		Button:
+			background_normal: ''
+			background_color: 187/256, 70/256, 122/256, 1
+			color: 55/256, 1/256, 25/256, 1 
+			size_hint:[1,1/12]
+			text: "Продолжить"
+			on_release:
+				root.save_answers()
+				app.root.current = "fourth"
+				root.manager.transition.direction = "left"
+				
+<FourthWindow>:
+	name: "fourth"
+
+	sumka:sumka
+	sapog:sapog
+	tsep:tsep
+	kulak:kulak
+	chay:chay
+	okno:okno
+	volosy:volosy
+	devochka:devochka
+	telefon:telefon
+	most:most
+	divan:divan
+	portret:portret
+	scheka:scheka
+	pismo:pismo
+	kletka:kletka
+	
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+		
+		BackgroundLabel:
+			text: "ЗАУЧИВАНИЕ 3 из 5"
+			size_hint: [1, 1/12]
+			halign: "left"
+			background_color: 85/256, 1/256, 37/256, 1
+			color: 1, 1, 1, 1 
+		BoxLayout:
+			orientation: "horizontal"
+			size_hint: [1, 3/12]
+			BackgroundLabel:
+				text:"Инструкция:\nСейчас вы услышите тот же список слов еще раз. И опять назовете те слова, которые вспомните.\nНазывать нужно все слова - даже те, которые вы называли в прошлый раз. Порядок значения не имеет."
+				text_size: root.width*8/10, None
+				size: self.texture_size
+				background_color: 1, 1, 1, 1
+				color: (55/256, 1/256, 25/256, 1)
+			AudioButton:
+				background_normal:''
+				background_color: 249/256, 198/256, 207/256, 1
+				id:retret
+				text: "Play"
+				filename: "Media/A1rus.ogg"
+				size_hint:[1/10, 1]
+		GridLayout:
+			rows:5
+			cols:3
+			padding:10
+			spacing:5
+			size_hint:[1,4/12]
+			
+			SuperButton:
+				number:0
+				text:'сумка'
+				id:sumka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'сапог'
+				id:sapog
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'цепь'
+				id:tsep
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''			
+			SuperButton:
+				number:0
+				text:'кулак'
+				id:kulak
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'чай'
+				id:chay
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'окно'
+				id:okno
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'волосы'
+				id:volosy
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'девочка'
+				id:devochka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'телефон'
+				id:telefon
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'мост'
+				id:most
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'диван'
+				id:divan
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'портрет'
+				id:portret
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'щека'
+				id:scheka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'письмо'
+				id:pismo
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'клетка'
+				id:kletka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+		Widget:
+			size_hint:[1,3/12]			
+		Button:
+			background_normal: ''
+			background_color: 187/256, 70/256, 122/256, 1
+			color: 55/256, 1/256, 25/256, 1 
+			size_hint:[1,1/12]
+			text: "Продолжить"
+			on_release:
+				root.save_answers()
+				app.root.current = "fifth"
+				root.manager.transition.direction = "left"
+
+<FifthWindow>:
+	name: "fifth"
+
+	sumka:sumka
+	sapog:sapog
+	tsep:tsep
+	kulak:kulak
+	chay:chay
+	okno:okno
+	volosy:volosy
+	devochka:devochka
+	telefon:telefon
+	most:most
+	divan:divan
+	portret:portret
+	scheka:scheka
+	pismo:pismo
+	kletka:kletka
+	
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+		
+		BackgroundLabel:
+			text: "ЗАУЧИВАНИЕ 4 из 5"
+			size_hint: [1, 1/12]
+			halign: "left"
+			background_color: 85/256, 1/256, 37/256, 1
+			color: 1, 1, 1, 1 
+		BoxLayout:
+			orientation: "horizontal"
+			size_hint: [1, 3/12]
+			BackgroundLabel:
+				text:"Инструкция:\nСейчас вы услышите тот же список слов еще раз. И опять назовете те слова, которые вспомните.\nНазывать нужно все слова - даже те, которые вы называли в прошлый раз. Порядок значения не имеет."
+				text_size: root.width*8/10, None
+				size: self.texture_size
+				background_color: 1, 1, 1, 1
+				color: (55/256, 1/256, 25/256, 1)
+			AudioButton:
+				background_normal:''
+				background_color: 249/256, 198/256, 207/256, 1
+				id:retret
+				text: "Play"
+				filename: "Media/A1rus.ogg"
+				size_hint:[1/10, 1]
+		GridLayout:
+			rows:5
+			cols:3
+			padding:10
+			spacing:5
+			size_hint:[1,4/12]
+			
+			SuperButton:
+				number:0
+				text:'сумка'
+				id:sumka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'сапог'
+				id:sapog
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'цепь'
+				id:tsep
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''			
+			SuperButton:
+				number:0
+				text:'кулак'
+				id:kulak
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'чай'
+				id:chay
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'окно'
+				id:okno
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'волосы'
+				id:volosy
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'девочка'
+				id:devochka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'телефон'
+				id:telefon
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'мост'
+				id:most
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'диван'
+				id:divan
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'портрет'
+				id:portret
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'щека'
+				id:scheka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'письмо'
+				id:pismo
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'клетка'
+				id:kletka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+		Widget:
+			size_hint:[1,3/12]			
+		Button:
+			background_normal:''
+			background_color: 187/256, 70/256, 122/256, 1
+			color: 55/256, 1/256, 25/256, 1 
+			size_hint:[1,1/12]
+			text: "Продолжить"
+			on_release:
+				root.save_answers()
+				app.root.current = "sixth"
+				root.manager.transition.direction = "left"
+<SixthWindow>:
+	name: "sixth"
+
+	sumka:sumka
+	sapog:sapog
+	tsep:tsep
+	kulak:kulak
+	chay:chay
+	okno:okno
+	volosy:volosy
+	devochka:devochka
+	telefon:telefon
+	most:most
+	divan:divan
+	portret:portret
+	scheka:scheka
+	pismo:pismo
+	kletka:kletka
+	
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+		
+		BackgroundLabel:
+			text: "ЗАУЧИВАНИЕ 5 из 5"
+			size_hint: [1, 1/12]
+			halign: "left"
+			background_color: 85/256, 1/256, 37/256, 1
+			color: 1, 1, 1, 1 
+		BoxLayout:
+			orientation: "horizontal"
+			size_hint: [1, 3/12]
+			BackgroundLabel:
+				text:"Инструкция:\nСейчас вы услышите тот же список слов еще раз. И опять назовете те слова, которые вспомните.\nНазывать нужно все слова - даже те, которые вы называли в прошлый раз. Порядок значения не имеет."
+				text_size: root.width*8/10, None
+				size: self.texture_size
+				background_color: 1, 1, 1, 1
+				color: (55/256, 1/256, 25/256, 1)
+			AudioButton:
+				background_normal:''
+				background_color: 249/256, 198/256, 207/256, 1
+				id:retret
+				text: "Play"
+				filename: "Media/A1rus.ogg"
+				size_hint:[1/10, 1]
+		GridLayout:
+			rows:5
+			cols:3
+			padding:10
+			spacing:5
+			size_hint:[1,4/12]
+			
+			SuperButton:
+				number:0
+				text:'сумка'
+				id:sumka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'сапог'
+				id:sapog
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'цепь'
+				id:tsep
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''			
+			SuperButton:
+				number:0
+				text:'кулак'
+				id:kulak
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'чай'
+				id:chay
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'окно'
+				id:okno
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'волосы'
+				id:volosy
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'девочка'
+				id:devochka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'телефон'
+				id:telefon
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'мост'
+				id:most
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'диван'
+				id:divan
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'портрет'
+				id:portret
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'щека'
+				id:scheka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'письмо'
+				id:pismo
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'клетка'
+				id:kletka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+		Widget:
+			size_hint:[1,3/12]			
+		Button:
+			background_normal:''
+			background_color: 187/256, 70/256, 122/256, 1
+			color: 55/256, 1/256, 25/256, 1 
+			size_hint:[1,1/12]
+			text: "Продолжить"
+			on_release:
+				root.save_answers()
+				app.root.current = "seventh"
+				root.manager.transition.direction = "left"
+<SeventhWindow>:
+	name: "seventh"
+
+	sumka:sumka
+	sapog:sapog
+	tsep:tsep
+	kulak:kulak
+	chay:chay
+	okno:okno
+	volosy:volosy
+	devochka:devochka
+	telefon:telefon
+	most:most
+	divan:divan
+	portret:portret
+	scheka:scheka
+	pismo:pismo
+	kletka:kletka
+	
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+		
+		BackgroundLabel:
+			text: "ИНТЕРФЕРЕНЦИЯ"
+			size_hint: [1, 1/12]
+			halign: "left"
+			background_color: 85/256, 1/256, 37/256, 1
+			color: 1, 1, 1, 1 
+		BoxLayout:
+			orientation: "horizontal"
+			size_hint: [1, 3/12]
+			BackgroundLabel:
+				text:"Инструкция:\nА теперь вы услышите другие слова, которые вам затем нужно будет назвать в любом порядке"
+				text_size: root.width*8/10, None
+				size: self.texture_size
+				background_color: 1, 1, 1, 1
+				color: (55/256, 1/256, 25/256, 1)
+				
+			AudioButton:
+				background_normal:''
+				background_color: 249/256, 198/256, 207/256, 1
+				id:retret
+				text: "Play"
+				filename: "Media/B1rus.ogg"
+				size_hint:[1/10, 1]
+		GridLayout:
+			rows:5
+			cols:3
+			padding:10
+			spacing:5
+			size_hint:[1,4/12]
+			
+			SuperButton:
+				number:0
+				text:'платье'
+				id:sumka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'газета'
+				id:sapog
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'театр'
+				id:tsep
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''			
+			SuperButton:
+				number:0
+				text:'хлеб'
+				id:kulak
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'лодка'
+				id:chay
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'мешок'
+				id:okno
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'хвост'
+				id:volosy
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'голова'
+				id:devochka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'замок'
+				id:telefon
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'танк'
+				id:most
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'старик'
+				id:divan
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'поле'
+				id:portret
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'река'
+				id:scheka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'дерево'
+				id:pismo
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'золото'
+				id:kletka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+		Widget:
+			size_hint:[1,3/12]			
+		Button:
+			background_normal:''
+			background_color: 187/256, 70/256, 122/256, 1
+			color: 55/256, 1/256, 25/256, 1
+			size_hint:[1,1/12]
+			text: "Продолжить"
+			on_release:
+				root.save_answers()
+				app.root.current = "eighth"
+				root.manager.transition.direction = "left"
+<EighthWindow>:
+	name: "eighth"
+	sumka:sumka
+	sapog:sapog
+	tsep:tsep
+	kulak:kulak
+	chay:chay
+	okno:okno
+	volosy:volosy
+	devochka:devochka
+	telefon:telefon
+	most:most
+	divan:divan
+	portret:portret
+	scheka:scheka
+	pismo:pismo
+	kletka:kletka
+	
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+		
+		BackgroundLabel:
+			text: "ВОСПРОИЗВЕДЕНИЕ ПОСЛЕ ИНТЕРФЕРЕНЦИИ"
+			size_hint: [1, 1/12]
+			text_size: root.width*9/10, None
+			size: self.texture_size
+			halign: "left"
+			background_color: 85/256, 1/256, 37/256, 1
+			color: 1, 1, 1, 1 
+		BoxLayout:
+			orientation: "horizontal"
+			size_hint: [1, 3/12]
+			BackgroundLabel:
+				text:"Инструкция:\nА теперь вспомните и назовите слова из первого списка, в любом порядке."
+				text_size: root.width*8/10, None
+				size: self.texture_size
+				background_color: 1, 1, 1, 1
+				color: (55/256, 1/256, 25/256, 1)
+		GridLayout:
+			rows:5
+			cols:3
+			padding:10
+			spacing:5
+			size_hint:[1,4/12]
+			
+			SuperButton:
+				number:0
+				text:'сумка'
+				id:sumka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'сапог'
+				id:sapog
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'цепь'
+				id:tsep
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''			
+			SuperButton:
+				number:0
+				text:'кулак'
+				id:kulak
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'чай'
+				id:chay
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'окно'
+				id:okno
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'волосы'
+				id:volosy
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'девочка'
+				id:devochka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'телефон'
+				id:telefon
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'мост'
+				id:most
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'диван'
+				id:divan
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'портрет'
+				id:portret
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'щека'
+				id:scheka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'письмо'
+				id:pismo
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'клетка'
+				id:kletka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+		Widget:
+			size_hint:[1,3/12]			
+		Button:
+			background_normal:''
+			background_color: 187/256, 70/256, 122/256, 1
+			color: 55/256, 1/256, 25/256, 1 
+			size_hint:[1,1/12]
+			text: "Продолжить"
+			on_release:
+				root.save_answers()
+				app.root.current = "nineth"
+				root.manager.transition.direction = "left"
+<NinethWindow>:
+	name: "nineth"
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+		BackgroundLabel:
+			text:"Теперь надо подождать 20 минут."
+			background_color: 1, 1, 1, 1
+			color: (55/256, 1/256, 25/256, 1)
+		BackgroundLabel:
+			id:counter
+			text: "20:00"
+			background_color: 1, 1, 1, 1
+			color: (55/256, 1/256, 25/256, 1)
+		Button:
+			background_normal:''
+			background_color: 187/256, 70/256, 122/256, 1
+			color: 55/256, 1/256, 25/256, 1 
+			text: "Запустить отсчет"
+			on_press:
+				root.btn_press()
+		Button:
+			background_normal:''
+			background_color: 187/256, 70/256, 122/256, 1
+			color: 55/256, 1/256, 25/256, 1
+			text: "Продолжить"
+			on_release:
+				app.root.current = "tenth"
+				root.manager.transition.direction = "left"
+<TenthWindow>:
+	name: "tenth"
+
+	sumka:sumka
+	sapog:sapog
+	tsep:tsep
+	kulak:kulak
+	chay:chay
+	okno:okno
+	volosy:volosy
+	devochka:devochka
+	telefon:telefon
+	most:most
+	divan:divan
+	portret:portret
+	scheka:scheka
+	pismo:pismo
+	kletka:kletka
+	
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+		
+		BackgroundLabel:
+			text: "ОТСРОЧЕННОЕ ВОСПРОИЗВЕДЕНИЕ"
+			size_hint: [1, 1/12]
+			halign: "left"
+			background_color: 85/256, 1/256, 37/256, 1
+			color: 1, 1, 1, 1 
+		BoxLayout:
+			orientation: "horizontal"
+			size_hint: [1, 3/12]
+			BackgroundLabel:
+				text:"Инструкция:\nТеперь еще раз вспомните и назовите слова из первого списка."
+				text_size: root.width*8/10, None
+				size: self.texture_size
+				background_color: 1, 1, 1, 1
+				color: (55/256, 1/256, 25/256, 1)
+		GridLayout:
+			rows:5
+			cols:3
+			padding:10
+			spacing:5
+			size_hint:[1,4/12]
+			
+			SuperButton:
+				number:0
+				text:'сумка'
+				id:sumka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'сапог'
+				id:sapog
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'цепь'
+				id:tsep
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''			
+			SuperButton:
+				number:0
+				text:'кулак'
+				id:kulak
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'чай'
+				id:chay
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'окно'
+				id:okno
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'волосы'
+				id:volosy
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'девочка'
+				id:devochka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'телефон'
+				id:telefon
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'мост'
+				id:most
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'диван'
+				id:divan
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'портрет'
+				id:portret
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'щека'
+				id:scheka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'письмо'
+				id:pismo
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+			SuperButton:
+				number:0
+				text:'клетка'
+				id:kletka
+				on_press:root.btn_press(self)
+				background_color: [247/256,161/256,151/256,1]
+				background_normal: ''
+		Widget:
+			size_hint:[1,3/12]			
+		Button:
+			background_normal:''
+			background_color: 187/256, 70/256, 122/256, 1
+			color: 55/256, 1/256, 25/256, 1 
+			size_hint:[1,1/12]
+			text: "Продолжить"
+			on_release:
+				root.save_answers()
+				app.root.current = "eleventh"
+				root.manager.transition.direction = "left"
+				
+<EleventhWindow>:
+	name: "eleventh"
+
+	sumka:sumka
+	sapog:sapog
+	tsep:tsep
+	kulak:kulak
+	chay:chay
+	okno:okno
+	volosy:volosy
+	devochka:devochka
+	telefon:telefon
+	most:most
+	divan:divan
+	portret:portret
+	scheka:scheka
+	pismo:pismo
+	kletka:kletka
+	
+	ScrollView:
+	    do_scroll_x: False
+		do_scroll_y: True
+		BoxLayout:
+			orientation: "vertical"
+			size: root.width, root.height
+			
+			BackgroundLabel:
+				text: "ЗРИТЕЛЬНОЕ ОПОЗНАНИЕ"
+				size_hint: [1, 1/12]
+				halign: "left"
+				background_color: 85/256, 1/256, 37/256, 1
+				color: 1, 1, 1, 1 
+			BoxLayout:
+				orientation: "horizontal"
+				size_hint: [1, 1/12]
+				BackgroundLabel:
+					text:"Инструкция:\nПосмотрите на эти слова и нажмите только на те, которые были в первом списке."
+					text_size: root.width*8/10, None
+					size: self.texture_size
+					background_color: 1, 1, 1, 1
+					color: (55/256, 1/256, 25/256, 1)
+			GridLayout:
+				rows:10
+				cols:5
+				padding:15
+				spacing:5
+				size_hint:[1,8/12]
+				
+				SuperButton:
+					number:0
+					text:'кость'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'хлеб'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					id:divan
+					text:'диван'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''				
+				SuperButton:
+					number:0
+					text:'старик'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'пальто'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'кулак'
+					id:kulak
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'чай'
+					id:chay
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'ручка'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'сумка'
+					id:sumka
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'кошелек'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'мост'
+					id:most
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'мешок'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'дерево'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'палец'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'рука'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'кружка'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'телефон'
+					id:telefon
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'письмо'
+					id:pismo
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'ветка'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'золото'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'замок'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'сапог'
+					id:sapog
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'цепь'
+					id:tsep
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'бабочка'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'лодка'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'ванна'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'щека'
+					id:scheka
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'окно'
+					id:okno
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'река'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'голова'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'штора'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'портрет'
+					id:portret
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'поле'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'клетка'
+					id:kletka
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'девочка'
+					id:devochka
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'якорь'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'табурет'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'танк'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'театр'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'платье'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'веревка'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'хвост'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'перец'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'пирог'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'варенье'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'деньги'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'газета'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'санки'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'волосы'
+					id:volosy
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+				SuperButton:
+					number:0
+					text:'фен'
+					on_press:root.btn_press(self)
+					background_color: [247/256,161/256,151/256,1]
+					background_normal: ''
+			Widget:
+				size_hint:[1,1/12]			
+			Button:
+				background_normal:''
+				background_color: 187/256, 70/256, 122/256, 1
+				color: 55/256, 1/256, 25/256, 1 
+				size_hint:[1,1/12]
+				text: "Продолжить"
+				on_release:
+					root.save_answers()
+					app.root.current = "twelveth"
+					root.manager.transition.direction = "left"
+<TwelvethWindow>:
+	name: "twelveth"
+	ScrollView:
+	    do_scroll_x: False
+		do_scroll_y: True
+		
+		MyLayout:
+			rows:24
+			cols:5
+			id:bigtable		
+			size:(root.width, root.height)
+			size_hint_y: None
+			height: self.minimum_height
+			padding: 10
+			
+			
+			BackgroundLabel:
+				background_color: 85/256, 1/256, 37/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 85/256, 1/256, 37/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 85/256, 1/256, 37/256, 1
+				color: 1, 1, 1, 1
+				size_hint_y: None
+				size_hint_x: None
+				width:bigtable.width*0.4
+				height:40
+				halign: 'center'
+				valign: 'middle'
+				text:'ТЕСТ ОКОНЧЕН'
+			BackgroundLabel:
+				background_color: 85/256, 1/256, 37/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 85/256, 1/256, 37/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			
+			
+			BackgroundLabel:
+				background_color: 85/256, 1/256, 37/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 85/256, 1/256, 37/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			Button:
+				background_normal:''
+				background_color: 187/256, 70/256, 122/256, 1
+				color: 55/256, 1/256, 25/256, 1 
+				size_hint_y: None
+				size_hint_x: None
+				width:bigtable.width*0.4
+				height:40
+				halign: 'center'
+				valign: 'middle'
+				text:'Показать результаты'
+				on_press: root.press()
+			BackgroundLabel:
+				background_color: 85/256, 1/256, 37/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 85/256, 1/256, 37/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15			
+			
+
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 1, 1, 1, 1
+				color: (55/256, 1/256, 25/256, 1)
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+				text:'Код участника'
+			BackgroundLabel:
+				background_color: 1, 1, 1, 1
+				color: (55/256, 1/256, 25/256, 1)
+				size_hint_y: None
+				size_hint_x: None
+				width:bigtable.width*0.4
+				height:40
+				halign: 'center'
+				valign: 'middle'
+				id:code_p
+				text:""
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 1, 1, 1, 1
+				color: (55/256, 1/256, 25/256, 1)
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+				text:'Возраст'
+			BackgroundLabel:
+				background_color: 1, 1, 1, 1
+				color: (55/256, 1/256, 25/256, 1)
+				size_hint_y: None
+				size_hint_x: None
+				width:bigtable.width*0.4
+				height:40
+				halign: 'center'
+				valign: 'middle'
+				id:age_p
+				text:""
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+
+
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 1, 1, 1, 1
+				color: (55/256, 1/256, 25/256, 1)
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+				text:'Образование'
+			BackgroundLabel:
+				background_color: 1, 1, 1, 1
+				color: (55/256, 1/256, 25/256, 1)
+				size_hint_y: None
+				size_hint_x: None
+				width:bigtable.width*0.4
+				height:40
+				halign: 'center'
+				valign: 'middle'
+				id:edu_p
+				text:""
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 1, 1, 1, 1
+				color: (55/256, 1/256, 25/256, 1)
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+				text:'Электронная почта'
+			BackgroundLabel:
+				background_color: 1, 1, 1, 1
+				color: (55/256, 1/256, 25/256, 1)
+				size_hint_y: None
+				size_hint_x: None
+				width:bigtable.width*0.4
+				height:40
+				halign: 'center'
+				valign: 'middle'
+				id:email_p
+				text:""
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+				
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p1
+				size_hint_y: None
+				size_hint_x: None
+				width:bigtable.width*0.4
+				height:40
+				halign: 'center'
+				valign: 'middle'
+				text:"Заучивание"
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p2
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+				text:'Попытка'
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p3
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+				text:'Число слов'
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p4
+				size_hint_y: None
+				size_hint_x: None
+				width:bigtable.width*0.4
+				height:40
+				halign: 'center'
+				valign: 'middle'
+				text:"Слова"
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p5
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+				text:'%'
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p6
+				size_hint_y: None
+				size_hint_x: None
+				height:z13.height
+				width:bigtable.width*0.15
+				text:'1'
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:z13.height
+				width:bigtable.width*0.15
+				text:'///'
+				id:z11
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				halign: 'center'
+				valign: 'middle'
+				text:"///"
+				id:z13
+				size: self.texture_size
+				text_size: bigtable.width*4/10, None
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:z13.height
+				width:bigtable.width*0.15
+				text:'///'
+				id:z12
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:z13.height
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p7
+				size_hint_y: None
+				size_hint_x: None
+				height:z23.height
+				width:bigtable.width*0.15
+				text:'2'
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:z23.height
+				width:bigtable.width*0.15
+				text:'///'
+				id:z21
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				halign: 'center'
+				valign: 'middle'
+				text:"///"
+				id:z23
+				size: self.texture_size
+				text_size: bigtable.width*4/10, None
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:z23.height
+				width:bigtable.width*0.15
+				text:'///'
+				id:z22
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:z23.height
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p8
+				size_hint_y: None
+				size_hint_x: None
+				height:z33.height
+				width:bigtable.width*0.15
+				text:'3'
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:z33.height
+				width:bigtable.width*0.15
+				text:'///'
+				id:z31
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				halign: 'center'
+				valign: 'middle'
+				text:"///"
+				id:z33
+				size: self.texture_size
+				text_size: bigtable.width*4/10, None
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:z33.height
+				width:bigtable.width*0.15
+				text:'///'
+				id:z32
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:z33.height
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p9
+				size_hint_y: None
+				size_hint_x: None
+				height:z43.height
+				width:bigtable.width*0.15
+				text:'4'
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:z43.height
+				width:bigtable.width*0.15
+				text:'///'
+				id:z41
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				halign: 'center'
+				valign: 'middle'
+				text:"///"
+				id:z43
+				size: self.texture_size
+				text_size: bigtable.width*4/10, None
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:z43.height
+				width:bigtable.width*0.15
+				text:'///'
+				id:z42
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:z43.height
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p10
+				size_hint_y: None
+				size_hint_x: None
+				height:z53.height
+				width:bigtable.width*0.15
+				text:'5'
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:z53.height
+				width:bigtable.width*0.15
+				text:'///'
+				id:z51
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				halign: 'center'
+				valign: 'middle'
+				text:"///"
+				id:z53
+				size: self.texture_size
+				text_size: bigtable.width*4/10, None
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:z53.height
+				width:bigtable.width*0.15
+				text:'///'
+				id:z52
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:z53.height
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p11
+				size_hint_y: None
+				size_hint_x: None
+				width:bigtable.width*0.4
+				height:40
+				halign: 'center'
+				valign: 'middle'
+				text:"Интерференция"
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p12
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+				text:'Число слов'
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p13
+				size_hint_y: None
+				size_hint_x: None
+				width:bigtable.width*0.4
+				height:40
+				halign: 'center'
+				valign: 'middle'
+				text:"Слова"
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p14
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+				text:'%'
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:i13.height
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:i13.height
+				width:bigtable.width*0.15
+				text:'///'
+				id:i11
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				halign: 'center'
+				valign: 'middle'
+				text:"///"
+				id:i13
+				size: self.texture_size
+				text_size: bigtable.width*4/10, None
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:i13.height
+				width:bigtable.width*0.15
+				text:'///'
+				id:i12
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:i13.height
+				width:bigtable.width*0.15
+
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p15
+				size_hint_y: None
+				size_hint_x: None
+				width:bigtable.width*0.4
+				height:40
+				halign: 'center'
+				valign: 'middle'
+				text:"Воспроизведение"
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+
+
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p16
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+				text:'Тип'
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p17
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+				text:'Число слов'
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p18
+				size_hint_y: None
+				size_hint_x: None
+				width:bigtable.width*0.4
+				height:40
+				halign: 'center'
+				valign: 'middle'
+				text:"Слова"
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p19
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+				text:'%'
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p20
+				size_hint_y: None
+				size_hint_x: None
+				height:v13.height
+				width:bigtable.width*0.15
+				text:'Немедленное'
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:v13.height
+				width:bigtable.width*0.15
+				text:'///'
+				id:v11
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				halign: 'center'
+				valign: 'middle'
+				text:"///"
+				id:v13
+				size: self.texture_size
+				text_size: bigtable.width*4/10, None
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:v13.height
+				width:bigtable.width*0.15
+				text:'///'
+				id:v12
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:v13.height
+				width:bigtable.width*0.15
+	
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p21
+				size_hint_y: None
+				size_hint_x: None
+				height:v23.height
+				width:bigtable.width*0.15
+				text:'Отсроченное'
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:v23.height
+				width:bigtable.width*0.15
+				text:'///'
+				id:v21
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				halign: 'center'
+				valign: 'middle'
+				text:"///"
+				id:v23
+				size: self.texture_size
+				text_size: bigtable.width*4/10, None
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:v23.height
+				width:bigtable.width*0.15
+				text:'///'
+				id:v22
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:v23.height
+				width:bigtable.width*0.15
+
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p22
+				size_hint_y: None
+				size_hint_x: None
+				width:bigtable.width*0.4
+				height:40
+				halign: 'center'
+				valign: 'middle'
+				text:"Зрительное опознание"
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p23
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+				text:'Число слов'
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p24
+				size_hint_y: None
+				size_hint_x: None
+				width:bigtable.width*0.4
+				height:40
+				halign: 'center'
+				valign: 'middle'
+				text:"Слова"
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				id:p25
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+				text:'%'
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:o13.height
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:o13.height
+				width:bigtable.width*0.15
+				text:'///'
+				id:o11
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				halign: 'center'
+				valign: 'middle'
+				text:"///"
+				id:o13
+				size: self.texture_size
+				text_size: bigtable.width*4/10, None
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:o13.height
+				width:bigtable.width*0.15
+				text:'///'
+				id:o12
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:o13.height
+				width:bigtable.width*0.15
+
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			Button:
+				background_normal:''
+				background_color: 187/256, 70/256, 122/256, 1
+				color: 55/256, 1/256, 25/256, 1 
+				size_hint_y: None
+				size_hint_x: None
+				width:bigtable.width*0.4
+				height:40
+				halign: 'center'
+				valign: 'middle'
+				text:"Сохранить результаты"
+				on_press:root.export()
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
+			BackgroundLabel:
+				background_color: 252/256, 252/256, 252/256, 1
+				size_hint_y: None
+				size_hint_x: None
+				height:40
+				width:bigtable.width*0.15
